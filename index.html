@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Movie Watchlist 🍿</title>
+</head>
+<body>
+    <header class="flex">
+        <div class="flex header-text">
+            <h1>Find Your Film</h1>
+            <a href="watchlist.html">Watchlist</a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="search-bar" class="search-bar">
+            <div class="search-bar-input">
+                <img class="icon" src="images/icon-search.png" alt="search icon">
+                <input id="search-input" type="text" placeholder="Search for a movie">
+            </div>
+            <button id="search-btn" class="search-btn" type="submit">Search</button>
+        </div>
+        <div class="movie-list-container">
+            <div id="movie-list-container" class="movie-list-container-container">
+            </div>
+        </div>
+    </main>
+    <template id="movie-item-template">
+        <div class="movie-list-item flex">
+            <img class="poster-img" src="" alt="">
+            <div class="movie-info flow">
+                <div class="movie-title-rating flex">
+                    <h2 class="movie-title">TITLE</h2>
+                    <p class="movie-rating">⭐RATING</p>
+                </div>
+                <div class="flex">
+                    <p class="movie-duration">⌚DURATION</p>
+                    <p class="movie-genre">GENRE</p>
+                    <div class="movie-watchlist-btn" data-imdb="">
+                        <img class="watchlist-icon" src="images/icon-add.png" alt="add/remove movie to watchlist icon">
+                        <p>Watchlist</p>
+                    </div>
+                </div>
+                <p class="movie-description">DESCRIPTION</p>
+            </div>
+        </div>
+    </template>
+    <script src="./js/index.js" type="module"></script> 
+</body>
+</html>

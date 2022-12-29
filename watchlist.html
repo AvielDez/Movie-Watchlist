@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Movie Watchlist 🍿</title>
+</head>
+<body>
+    <header class="flex">
+        <div class="flex header-text">
+            <h1>Your Watchlist</h1>
+            <a href="index.html">Search for movies</a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="movie-list-container">
+            <div id="movie-list-container" class="movie-list-container-container"></div>
+        </div>
+    </main>
+
+    <template id="movie-item-template">
+        <div class="movie-list-item flex">
+            <img class="poster-img" src="" alt="">
+            <div class="movie-info flow">
+                <div class="movie-title-rating flex">
+                    <h2 class="movie-title">TITLE</h2>
+                    <p class="movie-rating">⭐RATING</p>
+                </div>
+                <div class="flex">
+                    <p class="movie-duration">⌚DURATION</p>
+                    <p class="movie-genre">GENRE</p>
+                    <div class="movie-watchlist-btn" data-imdb="">
+                        <img class="watchlist-icon" src="images/icon-remove.png" alt="add/remove movie to watchlist icon">
+                        <p>Remove</p>
+                    </div>
+                </div>
+                <p class="movie-description">DESCRIPTION</p>
+            </div>
+        </div>
+    </template>
+    <script src="./js/watchlist.js" type="module"></script> 
+</body>
+</html>

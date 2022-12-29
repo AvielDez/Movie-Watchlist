@@ -1,0 +1,240 @@
+:root{
+    /*Max size text*/
+    --fs-20: 1.25rem;      /*20px body*/
+    --fs-35: 2.1875rem;    /*35px subheadings lighter weight*/
+    --fs-40: 2.5rem;       /*40px headings*/
+
+    /*Min size text*/
+    --fs-16: 1rem;         /*16px body*/
+    --fs-18: 1.125rem;     /*18px subheading lighter weight*/
+    --fs-21: 1.3125rem;    /*21px headings*/
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #131313;
+}
+
+h1, 
+h2, 
+p{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1{
+    font-size: clamp(var(--fs-21), 6vw, var(--fs-40));
+}
+h2{
+    font-size: clamp(var(--fs-18), 4vw, var(--fs-35));
+    font-weight: 400;
+}
+
+p{
+    font-size: clamp(var(--fs-16), 3vw, var(--fs-20));
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+header{
+    background-image: url('/images/bg-movie-theater.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    color: whitesmoke;
+}
+.header-text{
+    justify-content: space-between;
+    width: 80rem;
+    padding-inline: 2em;
+    margin-inline: auto;
+}
+.icon{
+    width: 25px;
+}
+.watchlist-icon{
+    width: 25px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flow > *:not(:first-child){
+    margin-top: 2rem;
+}
+
+.container{
+	padding-inline: 2em;
+	margin-inline: auto;
+	max-width: 80rem;
+}
+
+.search-bar{
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    background-color: whitesmoke;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    transform: translateY(-20px);
+}
+
+.search-bar-input{
+    border-radius: 6px 0 0 6px;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+   
+}
+
+input{
+    margin-left: .5rem;
+    border: none;
+    width: 100%;
+    font-size: clamp(var(--fs-16), 3vw, var(--fs-20));
+}
+
+input:focus{
+    background-color: none;
+    outline: none;
+}
+
+.search-btn{
+    padding: .8rem 2rem;
+    border: none;
+    border-left: 1px solid #D1D5DB;
+    border-radius: 0 4px 4px 0;
+    margin-left: auto;
+    font-size: clamp(var(--fs-16), 3vw, var(--fs-20));
+}
+
+.movie-list-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    overflow: scroll;
+}
+.movie-list-container-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1rem;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.movie-list-item{
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+    color: whitesmoke;
+    width: 170px;
+}
+
+.poster-img{
+    border-radius: 5px;
+}
+
+.movie-rating,
+.movie-genre,
+.movie-duration{
+    font-size: clamp(var(--fs-16), 2vw, var(--fs-18));
+}
+
+.movie-duration, 
+.movie-genre, 
+.movie-description{
+    display: none;
+}
+
+.movie-watchlist-btn{
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+}
+
+.movie-watchlist-btn:hover{
+    background-color: #5d5d5d;
+}
+
+.movie-info{
+    width: 100%;
+}
+
+.movie-title-rating{
+    justify-content: space-between;
+}
+
+.movie-duration{
+    width: max-content;
+}
+
+.display-none{
+    display: none;
+}
+
+.message{
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+@media (min-width: 500px) {
+    .flow > *:not(:first-child){
+        margin-top: .5rem;
+    }
+    .movie-list-container{
+        margin-inline: auto;
+        overflow: initial;
+        max-width: 700px;
+    }
+    .movie-list-container-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-block: 1rem;
+    }
+    .movie-watchlist-btn{
+        margin: 0 0 0 auto;
+    }
+    .movie-list-item{
+        width: 100%;
+        flex-direction: row;
+    }
+    .poster-img{
+        max-width: 150px;
+    }
+    .movie-duration, 
+    .movie-genre, 
+    .movie-description{
+        display: block;
+    }
+}
